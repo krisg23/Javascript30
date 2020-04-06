@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Flex Panels</title>
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <audio id="theme1" src="songs/theme1.mp3" type="audio/mp3"></audio>
+  <audio id="theme2" src="songs/theme2.mp3" type="audio/mp3"></audio>
+  <audio id="theme3" src="songs/theme3.mp3" type="audio/mp3"></audio>
+  <audio id="theme4" src="songs/theme4.mp3" type="audio/mp3"></audio>
+  <audio id="theme5" src="songs/theme5.mp3" type="audio/mp3"></audio>
+  <style>
+    @font-face{
+      font-family: 'The Wave';
+      src: url('The Wave.ttf') format('truetype');
+    }
+
+    html {
+      box-sizing: border-box;
+      background: #000a12;
+      font-family: 'helvetica neue';
+      font-size: 15px;
+      font-weight: 100;
+    }
+    
+    body {
+      margin: 0;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .panels {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .panel {
+      background: #6B0F9C;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+      color: white;
+      text-align: center;
+      align-items: center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size: cover;
+      background-position: center;
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel1 { background-image:url("img/back2.gif"); }
+    .panel2 { background-image:url("img/back4.gif"); }
+    .panel3 { background-image:url("img/back5.gif"); }
+    .panel4 { background-image:url("img/back6.gif"); }
+    .panel5 { background-image:url("img/back7.gif"); }
+    /* Flex Items */
+    .panel > * {
+      margin: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel > *:first-child { transform: translateY(-100%); }
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel > *:last-child { transform: translateY(100%); }
+    .panel.open-active > *:last-child { transform: translateY(0); }
+
+    .panel p {
+      font-family: 'The Wave';
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    }
+    
+    .panel p:nth-child(2) {
+      font-size: 4em;
+    }
+
+    .panel.open {
+      flex: 5;
+      font-size: 40px;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .panel p {
+        font-size: 1em;
+      }
+    }
+  </style>
+
+
+  <div class="panels">
+    <div onclick="playTheme1();" class="panel panel1">
+      <p>Disfruta</p>
+      <p>LA</p>
+      <p>Fiesta</p>
+    </div>
+    <div onclick="playTheme2();" class="panel panel2">
+      <p>La</p>
+      <p>VIDA</p>
+      <p>Es Simple</p>
+    </div>
+    <div onclick="playTheme3();" class="panel panel3">
+      <p>Todo</p>
+      <p>ES</p>
+      <p>Pasajero</p>
+    </div>
+    <div onclick="playTheme4();" class="panel panel4">
+      <p>Parchese</p>
+      <p>UN</p>
+      <p>Fresco</p>
+    </div>
+    <div onclick="playTheme5();" class="panel panel5">
+      <p>Un</p>
+      <p>PERREO</p>
+      <p>o que?</p>
+    </div>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      console.log('Hello');
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      console.log(e.propertyName);
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  </script>
+
+  <script>
+    function playTheme1(){
+      document.getElementById("theme2").pause();
+      document.getElementById("theme3").pause();
+      document.getElementById("theme4").pause();
+      document.getElementById("theme5").pause();
+      if(document.getElementById("theme1").paused == false){document.getElementById("theme1").pause();}
+      else{document.getElementById("theme1").play();}
+    }
+
+    function playTheme2(){
+      document.getElementById("theme1").pause();
+      document.getElementById("theme3").pause();
+      document.getElementById("theme4").pause();
+      document.getElementById("theme5").pause();
+      if(document.getElementById("theme2").paused == false){document.getElementById("theme2").pause();}
+      else{document.getElementById("theme2").play();}
+    }
+
+    function playTheme3(){
+      document.getElementById("theme1").pause();
+      document.getElementById("theme2").pause();
+      document.getElementById("theme4").pause();
+      document.getElementById("theme5").pause();
+      if(document.getElementById("theme3").paused == false){document.getElementById("theme3").pause();}
+      else{document.getElementById("theme3").play();}
+    }
+    function playTheme4(){
+      document.getElementById("theme1").pause();
+      document.getElementById("theme2").pause();
+      document.getElementById("theme3").pause();
+      document.getElementById("theme5").pause();
+      if(document.getElementById("theme4").paused == false){document.getElementById("theme4").pause();}
+      else{document.getElementById("theme4").play();}
+    }
+    function playTheme5(){
+     document.getElementById("theme1").pause();
+     document.getElementById("theme2").pause();
+     document.getElementById("theme3").pause();
+     document.getElementById("theme4").pause();
+     if(document.getElementById("theme5").paused == false){document.getElementById("theme5").pause();}
+     else{document.getElementById("theme5").play();}
+   }   
+  </script>
+
+</body>
+</html>
