@@ -9,7 +9,7 @@ function findMatches(wordToMatch, heroes) {
   return heroes.filter(place => {
     // here we need to figure out if the city or state matches what was searched
     const regex = new RegExp(wordToMatch, 'gi');
-    return place.superhero.match(regex) || place.state.match(regex)
+    return place.superhero.match(regex) || place.publisher.match(regex)
   });
 }
 
