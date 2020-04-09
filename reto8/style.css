@@ -1,0 +1,19 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: #37006a;
+}
+
+@font-face{
+	font-family: 'The Wave';
+	src: url('The Wave.ttf') format('truetype');
+}
+
+body #footer{
+	text-align: center;
+	color: black;
+	font-family: 'The Wave';
+	font-weight: 100;
+	font-size: 40px;
+}
+
