@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Console Tricks!</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+</head>
+<body>
+  <audio src="theme.mp3" id="theme" type="audio/mp3"></audio>
+  <p onClick="setWall()">Click me to enjoy</p>
+
+  <script>
+    const dogs = [{ name: 'Firulais', age: 2 }, { name: 'Peluso', age: 8 }];
+
+    function setWall() {
+      const p = document.querySelector('p');
+      p.innerHTML = "¡Sirva esa mierda compadre!";
+      p.style.color = '#fff';
+      p.style.fontSize = '50px';
+      p.style.textAlign = "center";
+      document.body.style.backgroundImage = "url('bg.jpg')";
+      document.body.style.backgroundSize = "cover";
+      document.getElementById("theme").play();
+      alert("Abre las Dev Tools ;)");
+    }
+
+    // Regular
+    console.log('Tons ke mi perro');
+
+    // Interpolated
+    console.log('Hola soy una %s cervecita!', '🍺');
+
+    // Styled
+    // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
+
+    // warning!
+    console.warn('¡Esta sonando un TEMAZOOOO!');
+
+    // Error :|
+    console.error('Uy gonorrea!');
+
+    // Info
+    console.info('¡El CD se robó las elecciones!');
+
+    // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), '¡Ésta vuelta esta melisima!');
+
+    // clearing
+    //console.clear();
+
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
+    //console.clear();
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+
+    // timing
+    console.time('fetching data');
+    fetch('superheroes.json')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+    console.table(dogs);
+
+  </script>
+</body>
+</html>
