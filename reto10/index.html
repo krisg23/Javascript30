@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Tag</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+</head>
+<body>
+  <audio id="theme" src="theme.mp3" type="audio/mp3"></audio>
+  <style>
+
+    @font-face{
+      font-family: 'Carlitos';
+      src: url('Carllitos.ttf') format('truetype');
+    }
+
+    html {
+      font-family: sans-serif;
+      background: #b9000d;
+    }
+
+    body{
+      margin-bottom: 0px;
+    }
+
+    .inbox {
+      max-width: 450px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #F1F1F1;
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+    }
+
+
+    input:checked + p {
+      background: #F9F9F9;
+      text-decoration: line-through;
+      color: #ffc600;
+    }
+
+    input[type="checkbox"] {
+      margin: 20px;
+    }
+
+    h1{
+      text-align: center;
+      color: black;
+      font-family: 'Carlitos';
+      font-size: 60px;
+      margin-bottom: 0px;
+    }
+
+    h2{
+      text-align: center;
+      color: black;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      flex: 1;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid #D1E2FF;
+    }
+  </style>
+   <!--
+   The following is a common layout you would see in an email client.
+
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes in-between those two checkboxes should be checked.
+
+  -->
+  <div>
+    <h1>Tag | del | Mamerto</h1>
+    <h2>Marca las que haces o con las que estes de acuerdo</h2>
+  </div>
+  <div style="width:950px; padding:3px; margin-left: auto; margin-right: auto;">
+  <div class="inbox" style="float: left;">
+    <div class="item">
+      <input type="checkbox">
+      <p>Uribe paraco hpta</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Consumes Maracachafa</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Votaste por Gustavo Petro a la presidencia</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Desapruebas el fracking</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Te repugnan las religiones</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Apoyas el desmonte del ESMAD</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>No ves Caracol ni RCN</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>"La Curva" te parece agradable</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Que chimba el viciooooo</p>
+    </div>
+  </div>
+
+  <div class="inbox" style="float: right;">
+    <div class="item">
+      <input type="checkbox">
+      <p>Asistes a las asambleas</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Desapruebas el gobierno actual</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Crees que las C. Sociales sirven para algo</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Estudias en una U. Pública</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Crees que se robaron la presidencia</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Parchas en el aeropuerto</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Desaprobaste a D. Quintero a dos semanas de mandato</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Te gustan los tropeles</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Duque te parece estúpido</p>
+    </div>
+  </div>
+  </div>
+
+<script>
+  console.log('Maracachafa: Marihuana/Marimba');
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+
+  function count(){
+    let q;
+    checks = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    const description = document.querySelector('.description');
+    if(checks==18){
+      alert("Abrazo combativo, camarada");
+      document.getElementById("theme").currentTime=2.5;
+      document.getElementById("theme").play();
+    }else{document.getElementById("theme").pause();} 
+  }
+
+  let lastChecked;
+
+  function handleCheck(e) {
+  // Check if they had the shift key down
+  // AND check that they are checking it
+  let inBetween = false;
+  if (e.shiftKey && this.checked) {
+    // go ahead and do what we please
+    // loop over every single checkbox
+    checkboxes.forEach(checkbox => {
+      console.log(checkbox);
+      if (checkbox === this || checkbox === lastChecked) {
+        inBetween = !inBetween;
+        console.log('Starting to check them in between!');
+      }
+
+      if (inBetween) {
+        checkbox.checked = true;
+      }
+    });
+  }
+
+  lastChecked = this;
+}
+
+checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+checkboxes.forEach(checkbox => checkbox.addEventListener('click', count));
+</script>
+</body>
+</html>
