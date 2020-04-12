@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <title>JS30 | Tag</title>
   <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>
-</head>
-<body>
-  <audio id="theme" src="content/theme.mp3" type="audio/mp3"></audio>
   <style>
+    *{}
+    * {box-sizing: borderbox;}
 
     @font-face{
       font-family: 'Carlitos';
@@ -15,12 +14,23 @@
     }
 
     html {
-      font-family: sans-serif;
-      background: #b9000d;
+
     }
 
     body{
+      font-family: sans-serif;
+      background: #b9000d;
       margin-bottom: 0px;
+      height: 1000px;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .container{
+      display: flex;
+        max-width: 950px;
+        flex-wrap: wrap;
+        margin: 0 auto;
     }
 
     .inbox {
@@ -53,8 +63,9 @@
     }
 
     h1{
+      margin: 0;
       text-align: center;
-      color: black;
+      color: white;
       font-family: 'Carlitos';
       font-size: 60px;
       margin-bottom: 0px;
@@ -65,6 +76,18 @@
       color: black;
       font-family: 'helvetica neue';
       font-size: 20px;
+    }
+
+    h3{
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 30px;
+      color: white;
+    }
+
+    .mamerto{
+      font-family: 'Carlitos';
+      font-size: 50px;
     }
 
     p {
@@ -78,6 +101,10 @@
       border-left: 1px solid #D1E2FF;
     }
   </style>
+</head>
+<body>
+  <audio id="theme" src="content/theme.mp3" type="audio/mp3"></audio>
+
    <!--
    The following is a common layout you would see in an email client.
 
@@ -88,7 +115,7 @@
     <h1>Tag | del | Mamerto</h1>
     <h2>Marca las que haces o con las que estes de acuerdo</h2>
   </div>
-  <div style="width:950px; padding:3px; margin-left: auto; margin-right: auto;">
+  <div class="container">
   <div class="inbox" style="float: left;">
     <div class="item">
       <input type="checkbox">
@@ -167,6 +194,7 @@
     </div>
   </div>
   </div>
+  <h3 class="description"><span class="mamerto"></span></h3>
 
 <script>
   console.log('Maracachafa: Marihuana/Marimba');
@@ -175,12 +203,31 @@
   function count(){
     let q;
     checks = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    q= 5.55 * checks;
+    
     const description = document.querySelector('.description');
-    if(checks==18){
-      alert("Abrazo combativo, camarada");
+    const mam = document.querySelector('.mamerto');
+    if(q===0){
+      description.textContent = "";
+    }
+    if(q<=30 && q!=0){
+      description.innerHTML = '<span class="mamerto">Mamerto</span>, pero de los finos';
+    }
+    if(q>30 && q<=55){
+      description.innerHTML = '<span class="mamerto">Mamerto</span>, pero moderado'; 
+    }
+    if(q>55 && q<=80){
+      description.innerHTML = '<span class="mamerto">Mamerto |</span> peligroso';  
+    }
+    if(q>80){
+      description.innerHTML = 'Abrazo combativo, <span class="mamerto">Camarada</span>';   
       document.getElementById("theme").currentTime=2.5;
       document.getElementById("theme").play();
-    }else{document.getElementById("theme").pause();} 
+    }else{document.getElementById("theme").pause();}
+
+    if(checks==5){alert("Te estas limitando");}
+    if(checks==10){alert("Aún te falta");}
+    if(checks==14){alert("Falta un poco más");} 
   }
 
   let lastChecked;
