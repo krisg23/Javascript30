@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Player</title>
+  <link rel="shortcut icon" type="image/png" href="icos/micro.svg"/>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <center>
+        <h1>Alejandro Galvis<span class="bar"> | </span><span class="reasons">Algo mas allá</span></h1>
+  </center>
+  <div class="player">
+    <video class="player__video viewer" src="video/theme.mp4"></video>
+
+    <div class="player__controls">
+      <div class="progress">
+        <div class="progress__filled"></div>
+      </div>
+      <button class="player__button toggle" title="Toggle Play"><i class="material-icons md-light md-36">play_arrow</i></button>
+      <button class="player__button mute" title="Toggle Volume"><i class="material-icons md-light md-36">volume_up</i></button>
+      <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+      <div class="buttons">
+        <button data-skip="-10" class="player__button"><i class="material-icons md-light md-36">replay_10</i></button>
+        <button data-skip="-5" class="player__button"><i class="material-icons md-light md-36">replay_5</i></button>
+        <button data-skip="5" class="player__button"><i class="material-icons md-light md-36">forward_5</i></button>
+        <button data-skip="10" class="player__button"><i class="material-icons md-light md-36">forward_10</i></button>
+      </div>
+    </div>
+  </div>
+  <center height="50">
+    <div class='widget-content'>
+      <ul class="social-icons">
+        <li><a href='https://www.facebook.com/alejandro.galvis.94' target="_blank"><img src="icos/facebook.svg" alt="Facebook" width="50" height="50"></a></li>
+        <li><a href='https://www.instagram.com/alejandro__galvis/' target="_blank"><img src="icos/instagram.svg" alt="Instagram" width="50" height="50"></a></li>
+        <li><a href='https://twitter.com/Alejo5210?s=09' target="_blank"><img src="icos/twitter.svg" alt="Twitter" width="50" height="50"></a></li>
+        <li><a href='https://www.youtube.com/channel/UCNCkaSMS_ecyFW-QU8iqloA' target="_blank"><img src="icos/youtube.svg" alt="Youtube" width="50" height="50"></a></li>
+      </ul>
+    </div>
+  </center>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

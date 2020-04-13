@@ -1,0 +1,228 @@
+@font-face{
+  font-family: 'Carlitos';
+  src: url('fonts/Carllitos.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'Honey';
+  src: url('fonts/hello honey.otf') format('truetype');
+}
+@font-face{
+  font-family: 'After';
+  src: url('fonts/After_Disaster.ttf') format('truetype');
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  min-height: 100vh;
+  background: #121212;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+center{
+  margin-top: 0px;
+  height: 50px;
+}
+
+h1{
+  margin: 0px;
+  font-family: 'Carlitos';
+  color: white;
+  font-size: 60px;
+}
+
+.bar{
+  font-family: 'Honey';
+  font-size: 60px;
+}
+.reasons{
+  font-family: 'After';
+  font-size: 50px;
+}
+
+.player {
+  margin-top: 10px;
+  max-width: 640px;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-size: 0;
+  overflow: hidden;
+}
+
+/* This css is only applied when fullscreen is active. */
+.player:fullscreen {
+  max-width: none;
+  width: 100%;
+}
+
+.player:-webkit-full-screen {
+  max-width: none;
+  width: 100%;
+}
+
+.player__video {
+  width: 100%;
+}
+
+.player__button {
+  background: none;
+  border: 0;
+  line-height: 1;
+  color: white;
+  text-align: center;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  max-width: 50px;
+  flex: 1;
+}
+
+.player__button:focus {
+  border-color: #ffc600;
+}
+
+.player__slider {
+  width: 10px;
+  height: 30px;
+}
+
+.player__controls {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%) translateY(-5px);
+  transition: all 0.3s;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.1);
+  justify-content: right;
+}
+
+.player:hover .player__controls {
+  transform: translateY(0);
+}
+
+.player:hover .progress {
+  height: 15px;
+}
+
+.player__controls > * {
+  flex: 1;
+}
+
+.progress {
+  -webkit-appearance: none;
+  flex: 10;
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  height: 5px;
+  transition: height 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.progress__filled {
+  width: 50%;
+  background: #3F51B5;
+  flex: 0;
+  flex-basis: 50%;
+}
+
+.buttons {
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3s;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.1);
+  height: 30px;
+}
+
+input[type="range"] {
+  flex: none;
+  -webkit-appearance: none;
+  background: #212121;
+  width: 20%;
+  margin: 7px 5px;
+  overflow: hidden;
+  height: 15px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow: -115px 0 0 100px #3F51B5;
+
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: black;
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.social-icons{
+  margin-top: 0px;
+  margin: 0px;
+  padding: 0px;
+  padding-inline-start: 0px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.social-icons a {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  word-break: break-all;
+}
