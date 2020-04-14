@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Key Detection</title>
+  <link rel="shortcut icon" type="image/png" href="walls/favicon.png"/>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="scripts/naruto.js"></script>
+  <script type="text/javascript" src="scripts/dragon.js"></script>
+  <script type="text/javascript" src="scripts/nanatsu.js"></script>
+</head>
+<body id="cuerpo">
+  <audio id="naruT" src="themes/naruto.mp3" type="audio/mp3"></audio>
+  <audio id="dragonT" src="themes/db.mp3" type="audio/mp3"></audio>
+  <audio id="nanaT" src="themes/nanatsu.mp3" type="audio/mp3"></audio>
+<script>
+const pressed = [];
+pressed.length = 10;
+const secretCode = '..........';
+
+window.addEventListener('keyup', (e) => {
+  console.log(e.key);
+  pressed.push(e.key);
+  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+  if (pressed.join('').includes('naruto') || pressed.join('').includes('NARUTO')) {
+    const divs = document.querySelectorAll('div');
+    divs.forEach(div => div.parentNode.removeChild(div));
+    alert("Presiona los personajes");
+    document.documentElement.style.backgroundImage = "url('walls/naruto.png')";
+    naruto_add();
+    document.getElementById("dragonT").pause();
+    document.getElementById("nanaT").pause();
+    document.getElementById("naruT").play();
+    console.log('DING DING!');
+  }
+  if(pressed.join('').includes('dragonball') || pressed.join('').includes('DRAGONBALL')){
+    const divs = document.querySelectorAll('div');
+    divs.forEach(div => div.parentNode.removeChild(div));
+    alert("Presiona los personajes");
+    document.documentElement.style.backgroundImage = "url('walls/db.png')";
+    db_add();
+    document.getElementById("naruT").pause();
+    document.getElementById("nanaT").pause();
+    document.getElementById("dragonT").play();
+    console.log('DING DING!');
+  }
+  if(pressed.join('').includes('nanatsu') || pressed.join('').includes('NANATSU')){
+    const divs = document.querySelectorAll('div');
+    divs.forEach(div => div.parentNode.removeChild(div));
+    alert("Presiona los personajes");
+    document.documentElement.style.backgroundImage = "url('walls/nanatsu.jpg')";
+    nanatsu_add();
+    document.getElementById("naruT").pause();
+    document.getElementById("dragonT").pause();
+    document.getElementById("nanaT").play();
+    console.log('DING DING!');
+  }
+  console.log(pressed);
+});
+</script>
+</body>
+</html>
