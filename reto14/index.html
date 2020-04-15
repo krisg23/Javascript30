@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Reference VS Copy</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onclick="playTheme();">
+    <audio id="theme" src="theme.mp3" type="audio/mp3"></audio>
+    <h1>¡La idea es que abras las <em>DevTools</em> y mires la consola!</h1>
+    <p>Como sé que puede ser aburrido te voy a poner una musiquita bien chévere para que te relajes mientras miras la consola y el script que está dentro del <em>index.html</em>, solo tienes que clickear alguna parte de la página para reproducirla</p>
+    <h2>Este reto no es la gran cosa entonces no lo compartí en <strong>Codex</strong></h2>
+    <p>Mas sin embargo voy a aprovechar que probablemente nadie leerá esto para darle gracias a Manuela por realizar esta actividad, a <em>GitHub</em> por patrocinarla, y a todos los compañeros que me han ayudado y acompañado durante este proceso, obviamente todos queremos el Morral pero mas que eso me quedo con todo lo que aprendí y practiqué gracias a esta dinámica <3</p>
+
+  <script>
+    // Supongamos que vamos a hacer una farra de pura guaracha y bellakeo y vamos a meter a los inviitados en un array
+    const invitados = ['El Kevin', 'El Brayan', 'El Greñas', 'Sneider', 'Steven', 'La Garra', 'Zarrapastroso', 'Piraña', 'Agonía'];
+
+    // Y supongamos que vamos a hacer varias copias de esa lista para pasársela a las autoridades
+    // Una forma sencilla es hacer una asignación
+    // Pero esta asignación así tal cual se hace 'por referencia' lo que significa que la 'copia' es en sí un puntero al original
+    // Eso significa que si modificamos algo en la 'copia' ese cambio se ve reflejado en el original
+    const lista = invitados;
+    lista[4]='Cristancho';
+    // Y aqui podemos ver como han cambiado tanto la copia como el original
+    console.log(invitados, lista);
+    // Si no queremos que ese ocurra tenemos otras formas de copiar esa misma lista
+    // Alternativa1
+    const lista2 = invitados.slice();
+    // Alternativa2
+    const lista3 = [].concat(invitados);
+    // Alternativa3
+    const lista4 = [...invitados];
+    // Cambiamos un elemento de la lista copiada, solo por probar
+    lista4[3] = 'El Brandon';
+    // Y vemos como no ha cambiado la lista original
+    // En la original permanece 'Sneider' y en la copia ha sido reemplazado por 'El Brandon'
+    console.log(lista4,invitados);
+    // Alternativa4
+    const lista5 = Array.from(invitados);
+
+    // Cuando alteramos una de las copias, la lista original no se ve afectada, a eso se le llama 'asignación por valor'
+    // Lo mismo ocurre con los objetos, supongamos que tenemos un objeto 'liendra'
+
+    // Ejemplo con Objetos
+    const liendra = {
+      name: 'Camilo',
+      age: 21,
+      crimes: 43
+    };
+
+    // Y queremos copiar ese objeto
+    // Agregaremos el atributo 'number' y además modificaremos su número de crímenes
+    const newLiendra = Object.assign({}, liendra, { number: 72, crimes: 33 });
+    // El nuevo objeto
+    console.log(newLiendra);
+    // El objeto original
+    console.log(liendra);
+
+    // Hagamos otro ejemplo con objetos pero con los desarrolladores de esta dinámica ¿Va?
+    const wes = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    };
+
+    console.log(wes);
+
+    //Y aquí dos formas más de copiar un objeto
+    const dev = Object.assign({}, wes);
+    const dev2 = JSON.parse(JSON.stringify(wes));
+
+    // Datos del Track
+    console.log("Track Name: saint seduce - 3 a.m.");
+    console.log("Track URL: https://soundcloud.com/saintseduce/3-am");
+
+
+    function playTheme(){
+        document.getElementById("theme").loop = true;
+        document.getElementById("theme").play();
+    }
+  </script>
+
+</body>
+</html>
