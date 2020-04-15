@@ -1,31 +1,31 @@
     @font-face {
       font-family: 'Kronk';
-      src: url("fonts/Las locuras del emperador.TTF") format('truetype');
+      src: url("../fonts/Las locuras del emperador.TTF") format('truetype');
     }
 
     @font-face {
       font-family: 'Carlitos';
-      src: url("fonts/Carllitos.ttf") format('truetype');
+      src: url("../fonts/Carllitos.ttf") format('truetype');
     }
 
     @font-face {
       font-family: 'After Disaster';
-      src: url("fonts/After_Disaster.ttf") format('truetype');
+      src: url("../fonts/After_Disaster.ttf") format('truetype');
     }
 
     @font-face{
       font-family: 'Groot';
-      src: url("fonts/JFWilwod.ttf") format('truetype');
+      src: url("../fonts/JFWilwod.ttf") format('truetype');
     }
 
     @font-face{
       font-family: 'Alvaro';
-      src: url("fonts/Adelle_Reg.otf") format('truetype');
+      src: url("../fonts/Adelle_Reg.otf") format('truetype');
     }
 
     @font-face{
       font-family: 'Bush';
-      src: url("fonts/MerahbBush.ttf") format('truetype');
+      src: url("../fonts/MerahbBush.ttf") format('truetype');
     }
 
     #kronkF{
