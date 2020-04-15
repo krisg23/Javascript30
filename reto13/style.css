@@ -1,0 +1,140 @@
+    @font-face {
+      font-family: 'Kronk';
+      src: url("fonts/Las locuras del emperador.TTF") format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Carlitos';
+      src: url("fonts/Carllitos.ttf") format('truetype');
+    }
+
+    @font-face {
+      font-family: 'After Disaster';
+      src: url("fonts/After_Disaster.ttf") format('truetype');
+    }
+
+    @font-face{
+      font-family: 'Groot';
+      src: url("fonts/JFWilwod.ttf") format('truetype');
+    }
+
+    @font-face{
+      font-family: 'Alvaro';
+      src: url("fonts/Adelle_Reg.otf") format('truetype');
+    }
+
+    @font-face{
+      font-family: 'Bush';
+      src: url("fonts/MerahbBush.ttf") format('truetype');
+    }
+
+    #kronkF{
+      font-family: 'Kronk';
+      font-size: 50px;
+    }
+    #ricardoF{
+      font-family: 'Carlitos';
+      font-size: 45px;
+    }
+    #marcianitoF{
+      font-family: 'After Disaster';
+      font-size: 40px;
+    }
+    #grootF{
+      font-family: 'Groot';
+      font-size: 35px;
+    }
+    #alvaritoF{
+      font-family: 'Alvaro';
+      font-size: 40px;
+    }
+    
+    .content{
+      margin: 0;
+      height: 2000px;
+      width: 100%;
+      display: flex;
+    }
+
+    .dancers {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .dancer-left{
+      margin-top: 70px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+    }
+    .dancer-right {
+      margin-top: 70px;
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+      align-items: center;
+      align-self: flex-end;
+    }
+
+    #text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      margin-left: 1em;
+      
+    }
+    
+    html {
+      box-sizing: border-box;
+      background: #383838;
+      font-size: 20px;
+      font-weight: 200;
+      color: white;
+    }
+    
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-family: 'Bush';
+      font-size: 60px;
+      letter-spacing: 0.1em;
+      word-spacing: 0.15em;
+    }
+
+    .site-wrap {
+      max-width: 950px;
+      margin: 100px auto;
+      background: #212121;
+      padding: 30px;
+      text-align: justify;
+    }
+
+    .align-right {
+      float: right;
+      margin-left: 20px;
+    }
+
+    .slide-in {
+      opacity: 0;
+      transition: all .5s;
+    }
+
+    .align-left.slide-in {
+      transform: translateX(-30%) scale(0.95);
+    }
+    
+    .align-right.slide-in {
+      transform: translateX(30%) scale(0.95);
+    }
+
+    .slide-in.active {
+      opacity: 1;
+      transform: translateX(0%) scale(1);
+    }
