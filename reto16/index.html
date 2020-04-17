@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Mouse Shadow</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+</head>
+<body>
+  <audio id="pokemon" src="https://raw.githubusercontent.com/natogourmet/javascript30/master/6/audio/pokemon.mp3"></audio>
+  <div class="hero">
+    <h1 contenteditable onclick="playMusic();">Q R U N H d 2 m</h1>
+  </div>
+
+  <style>
+    @font-face{
+      font-family: 'Pokemon';
+      src: url("POKPIX1.TTF");
+    }
+    html {
+      background-color: #e0e0e0;
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    h1 {
+      color: black;
+      font-family: 'Pokemon';
+      text-shadow: 10px 10px 0 rgba(0,0,0,1);
+      font-size: 50px;
+    }
+  </style>
+
+<script>
+  const hero = document.querySelector('.hero');
+  const text = hero.querySelector('h1');
+  const walk = 500; // 500px
+
+  function shadow(e) {
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    let { offsetX: x, offsetY: y } = e;
+
+    if (this !== e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
+
+    const xWalk = Math.round((x / width * walk) - (walk / 2));
+    const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+    text.style.textShadow = `
+      ${xWalk}px ${yWalk}px 0 rgba(3,169,244,1),
+      ${xWalk * -1}px ${yWalk}px 0 rgba(76,175,80,1),
+      ${yWalk}px ${xWalk * -1}px 0 rgba(233,30,99,1),
+      ${yWalk * -1}px ${xWalk}px 0 rgba(255,152,0,1)
+    `;
+
+  }
+  function playMusic(){
+    music = document.getElementById('pokemon');
+    if(music.paused == true){
+      music.loop = true;
+      music.currentTime = 12.5;
+      music.play();
+    } 
+  }
+
+  hero.addEventListener('mousemove', shadow);
+</script>
+</body>
+</html>
