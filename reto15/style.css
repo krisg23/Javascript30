@@ -4,16 +4,12 @@
 }
 
 html {
-  /*box-sizing: border-box;*/
-  /*background: url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
-  background-size: cover;*/
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /*font-family: Futura,"Trebuchet MS",Arial,sans-serif;*/
 }
 
 body{
@@ -25,6 +21,7 @@ body{
   background: url(images/bg.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .wrapper {
