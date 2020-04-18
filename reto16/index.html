@@ -40,8 +40,8 @@
       font-size: 50px;
     }
   </style>
-
 <script>
+  alert("Los pokémon son un texto, si haces click sobre ellos\npuedes agregar más con el teclado y disfrutar la musiquita :3");
   const hero = document.querySelector('.hero');
   const text = hero.querySelector('h1');
   const walk = 500; // 500px
@@ -59,7 +59,7 @@
     const yWalk = Math.round((y / height * walk) - (walk / 2));
 
     text.style.textShadow = `
-      ${xWalk}px ${yWalk}px 0 rgba(3,169,244,1),
+      ${xWalk}px ${yWalk * -1}px 0 rgba(3,169,244,1),
       ${xWalk * -1}px ${yWalk}px 0 rgba(76,175,80,1),
       ${yWalk}px ${xWalk * -1}px 0 rgba(233,30,99,1),
       ${yWalk * -1}px ${xWalk}px 0 rgba(255,152,0,1)
