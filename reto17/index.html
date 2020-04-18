@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Sort Without Articles</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <center>
+    <h1>100 frases con artículos "el/la/los/las" organizadas</h1>  
+  </center>
+  
+  <ul id="sentences"></ul>
+
+<script>
+const sentences = ['El zapato azul', 'La media naranja', 'El suéter rosa', 'La bufanda negra', 'Las herramientas viejas', 'Las macetas rotas', 'El balcón francés', 'La camisa sucia', 'La baldosa floja', 'La escalera nueva', 'El departamento grande', 'El hombre gordo', 'El niño delgado', 'Las campañas oxidadas', 'Los vestidos arrugados', 'El césped amarillo', 'Las sandalias rotas', 'Los hermanos charlatanes', 'El periódico arrugado', 'La piel sucia', 'La fiesta grande', 'Los pinceles mojados', 'La lámpara apagada', 'La camisa verde', 'El viento seco', 'El bolso marrón', 'Las flores violetas', 'La sonrisa hermosa', 'El perro ladrador', 'Las cartas marcadas', 'Los vasos rotos', 'Las tazas feas', 'El animal grande', 'El trapo sucio', 'Los pájaros azules', 'El paisaje verde', 'La montaña alta', 'El vecino flaco', 'El cartero dormido', 'Las cremas costosas', 'La cena económica', 'El libro viejo', 'El vecino ruidoso', 'El día soleado', 'Las nubes densas', 'La bruja graciosa', 'La canción larga', 'La ofrenda abundante', 'El caramelo dulce', 'La comida rica', 'La regla rota', 'La panza grande', 'La lona azul', 'Las ollas sucias', 'El maquillaje costoso', 'El obsequio caro', 'Las almendras duras', 'La tierra mojada', 'La música suave', 'Las aguas claras', 'El escritor rápido', 'La mujer vanidosa', 'El mar profundo', 'Las liebres rápidas', 'Los guepardos salvajes', 'Las libélulas hermosas', 'El caballo blanco', 'La película muda', 'La dama sensual', 'El hombre bello', 'El vestido negro', 'La carpeta grande', 'El celular nuevo', 'El tren antiguo', 'Las pastillas rojas', 'La noche clara', 'La tarde lluviosa', 'El hombre atractivo', 'La mujer sensual', 'La clase entretenida', 'El ciudadano ilustre', 'El mendigo audaz', 'El taller cerrado', 'Los papeles firmados', 'El gerente ocupado', 'El africano flaco', 'El maletín roto', 'La laptop veloz', 'El tenista talentoso', 'El partido aburrido', 'El gimnasta habilidoso', 'El auto rápido', 'El maestro divertido', 'La cantante triste', 'La bailarina aplicada', 'El líder carismático', 'Las lágrimas saladas', 'El jugador extraordinario', 'La piscina helada', 'Los hombres furiosos'];
+
+function strip(sentence) {
+  return sentence.replace(/^(el |la |los |las )/i, '').trim();
+}
+
+const sortedSentences = sentences.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+
+document.querySelector('#sentences').innerHTML =
+  sortedSentences
+    .map(sentence => `<li>${sentence}</li>`)
+    .join('');
+
+console.log(sortedSentences);
+
+</script>
+
+</body>
+</html>

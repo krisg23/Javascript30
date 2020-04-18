@@ -1,0 +1,37 @@
+body {
+  margin: 10px;
+  font-family: 'Montserrat';
+  background-color: #4cb5ab;
+  background-size: cover;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1{
+  color: black;
+}
+
+#sentences {
+  list-style: inside square;
+  font-size: 20px;
+  background: white;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 0;
+  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#sentences li {
+  border-bottom: 1px solid #efefef;
+  padding: 20px;
+}
+
+#sentences li:last-child {
+  border-bottom: 0;
+}
+
+a {
+  color: #ffc600;
+  text-decoration: none;
+}
