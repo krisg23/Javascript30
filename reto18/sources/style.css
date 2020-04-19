@@ -7,13 +7,16 @@ body {
 	margin: 10px;
 	font-family: 'Montserrat';
 	background-color: #f47b00;
+	background-image: url("bg.jpg");
 	background-attachment: fixed;
+	background-size: cover;
 	align-items: center;
 	min-height: 100vh;
 }
 
 h1{
-	color: black;
+	color: #ed407a;
+	text-shadow: white 0.25px 0.25px;
 }
 
 h2{
@@ -21,7 +24,8 @@ h2{
 	margin-bottom: 40px;
 	font-family: 'Erisblue';
 	font-size: 60px;
-	color: #ffac42;
+	color: #b4004e;
+	text-shadow: black 5px 5px;
 }
 
 #totalTime{
