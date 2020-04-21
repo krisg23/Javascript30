@@ -1,0 +1,136 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #808d94;
+  font-family: 'Montserrat';
+  font-weight: 200;
+  font-size: 20px;
+}
+
+#titleContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  height: 70px;
+}
+
+h1 {
+  font-family: 'Montserrat';
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+a {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.instructions{
+  width: 100%;
+  text-align: center;
+}
+
+#songs{
+  margin-top: 20px;
+}
+
+#footer{
+  bottom: 0;
+}
+
+.words {
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+  padding: 1rem 2rem 1rem 5rem;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+  background-size: 100% 3rem;
+  position: relative;
+  line-height: 3rem;
+}
+
+p {
+  margin: 0 0 3rem;
+}
+
+.words:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  top: 0;
+  left: 30px;
+  bottom: 0;
+  border: 1px solid;
+  border-color: transparent #efe4e4;
+}
+
+.table {
+  display: table;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #263238;
+}
+
+li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+#yellow:hover{
+  color: black;
+  background-color: #fde101;
+}
+
+#blue:hover{
+  background-color: #028dd0;
+}
+
+#red:hover{
+  background-color: #e8493f;
+}
+
+#pink:hover{
+  background-color: #eb6ca3;
+}
+
+#purple:hover{
+  background-color: #7368ad;
+}
+
+#green:hover{
+  background-color: #4cb36a;
+}
+
+#black:hover{
+  background-color: #212121;
+}
+
+#gray:hover{
+  color: black;
+  background-color: #b3b5b4;
+}
+
+#rainbow:hover{
+  color: black;
+  background-color: url(rainbow.js);
+}
+
+#white:hover{
+  color: black;
+  background-color: #edf1f0;
+}
