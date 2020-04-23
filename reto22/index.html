@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Follow Along Nav</title>
+  <link rel="shortcut icon" type="image/png" href="sources/favicon.png"/>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--<nav>
+      <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Order Status</a></li>
+        <li><a href="">Tweets</a></li>
+        <li><a href="">Read Our History</a></li>
+        <li><a href="">Contact Us</a></li>
+      </ul>
+    </nav>-->
+    <h1><span id="cars">Cars</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span id="pixar">PIXAR</span></h1>
+
+    <div class="wrapper">
+      <p>Cars es una película de <a href="https://es.wikipedia.org/wiki/Animación_por_computadora" target="_blank">animación por computadora</a> de <a href="https://es.wikipedia.org/wiki/2006" target="_blank">2006</a>, producida por <a href="https://es.wikipedia.org/wiki/Walt_Disney_Pictures" target="_blank">Walt Disney Pictures</a> <a href="https://es.wikipedia.org/wiki/Pixar" target="_blank">Pixar</a> y lanzada por <a href="https://es.wikipedia.org/wiki/Walt_Disney_Studios_Motion_Pictures" target="_blank">Walt Disney Studios Motion Pictures.</a></p>
+
+      <p>Dirigida y co-escrita por <a href="https://es.wikipedia.org/wiki/John_Lasseter" target="_blank">John Lasseter</a>, es la última película producida por Pixar antes de ser comprada por Disney. Ambientada en un mundo poblado enteramente por automóviles y otros vehículos, la película cuenta con las voces de <a href="https://es.wikipedia.org/wiki/Owen_Wilson" target="_blank">Owen Wilson,</a><a href="https://es.wikipedia.org/wiki/Paul_Newman" target="_blank"> Paul Newman,</a><a href="https://es.wikipedia.org/wiki/Larry_the_Cable_Guy" target="_blank"> Larry the Cable Guy,</a><a href="https://es.wikipedia.org/wiki/Bonnie_Hunt" target="_blank"> Bonnie Hunt,</a><a href="https://es.wikipedia.org/wiki/Tony_Shalhoub" target="_blank"> Tony Shalhoub,</a><a href="https://es.wikipedia.org/wiki/Cheech_Marin" target="_blank"> Cheech Marin,</a><a href="https://es.wikipedia.org/wiki/Michael_Wallis" target="_blank"> Michael Wallis,</a><a href="https://es.wikipedia.org/wiki/George_Carlin" target="_blank"> George Carlin,</a><a href="https://es.wikipedia.org/wiki/Jenifer_Lewis" target="_blank"> Jenifer Lewis,</a><a href="https://es.wikipedia.org/wiki/Michael_Keaton" target="_blank"> Michael Keaton</a> y <a href="https://es.wikipedia.org/wiki/John_Ratzenberger" target="_blank">John Ratzenberger.</a> La película fue acompañada por el cortometraje One Man Band para su proyección en salas de cine.</p>
+
+      <p>Fue nominada a dos <a href="https://es.wikipedia.org/wiki/Premios_Óscar" target="_blank">premios Óscar,</a> incluyendo a Mejor Película de Animación, y ganó el <a href="https://es.wikipedia.org/wiki/Premios_Globo_de_Oro" target="_blank">Globo de Oro</a> a la Mejor Película de Animación. La película fue dedicada a Joe Ranft, actor que murió en un accidente de una persona al producir la película</p>
+      <br>
+      <p>El protagonista es el <a href="https://es.wikipedia.org/wiki/Rayo_McQueen" target="_blank">Rayo McQueen</a> un auto de carreras, hecho de <a href="https://es.wikipedia.org/wiki/Fibra_de_carbono" target="_blank">fibra de carbono</a>, novato cuyo mejor anhelo es ganar la Copa Pistón y terminar en el equipo de patrocinio de Dinoco. Al principio se muestra muy creído de sí y sólo le importa correr, pero luego ve la importancia de la unión familiar y al final decide quedarse con los de Radiador Springs. Es respaldado por Rust-eze (a quienes desprecia al principio pero reconoce al final) y está enamorado de Sally.</p>
+
+      <p>Su apellido es un homenaje al director y supervisor de animación <a href="https://es.wikipedia.org/wiki/Glenn_McQueen" target="_blank">Glenn McQueen</a> así como también un homenaje indirecto a <a href="https://es.wikipedia.org/wiki/Steve_McQueen" target="_blank">Steve McQueen</a> de la película Le Mans. El diseño esta basado en los vehículos Chevrolet Corvette de <a href="https://es.wikipedia.org/wiki/NASCAR" target="_blank">NASCAR</a>, con influencias del diseño de <a href="https://es.wikipedia.org/wiki/Mazda_MX-5" target="_blank">Mazda Miata</a> y <a href="https://es.wikipedia.org/wiki/Dodge_Viper" target="_blank">Dodge Viper.</a> Su lema es "volar cual cohete, atacar como bólido" (en Hispanoamérica) o "ligero como una moto, potente como un camión" (en España).</p>
+    </div>
+
+<script>
+  const triggers = document.querySelectorAll('a');
+  const highlight = document.createElement('span');
+  highlight.classList.add('highlight');
+  document.body.appendChild(highlight);
+
+  function highlightLink() {
+    const linkCoords = this.getBoundingClientRect();
+    console.log(linkCoords);
+    const coords = {
+      width: linkCoords.width,
+      height: linkCoords.height,
+      top: linkCoords.top + window.scrollY,
+      left: linkCoords.left + window.scrollX
+    };
+
+    highlight.style.width = `${coords.width}px`;
+    highlight.style.height = `${coords.height}px`;
+    highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+  }
+
+  triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+
+</script>
+</body>
+</html>
+

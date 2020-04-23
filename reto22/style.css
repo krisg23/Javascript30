@@ -1,0 +1,98 @@
+@font-face{
+  font-family: 'Magneto';
+  src: url("sources/MAGNETOB.ttf");
+}
+@font-face{
+  font-family: 'Charlemagne';
+  src: url("sources/CharlemagneStd-Bold.otf");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0; /* Important! */
+  font-family: 'Montserrat';
+  background-image: url(sources/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+h1{
+  margin-top: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 70px;
+}
+
+p {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.wrapper {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  margin: 0 auto;
+  margin-bottom: 25px;
+  padding: 10px;
+  max-width: 900px;
+  font-size: 16.5px;
+  line-height: 2;
+  position: relative;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background: rgba(0,0,0,0.15);
+  border-radius: 20px;
+}
+
+.highlight {
+  transition: all 0.2s;
+  border-bottom: 2px solid white;
+  position: absolute;
+  top: 0;
+  background: black;
+  left: 0;
+  z-index: -1;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.menu {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin:100px 0;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 20px;
+  color: black;
+}
+
+#cars{
+  color: #e9302a;
+  font-family: 'Magneto';
+  text-shadow: white 2px 4px;
+}
+
+#pixar{
+  font-family: 'Charlemagne';
+  text-shadow: white 2px 2px;
+}
