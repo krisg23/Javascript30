@@ -1,3 +1,9 @@
+@font-face{
+  font-family: 'Disaster';
+  src: url("sources/After_Disaster.ttf");
+}
+
+
 html {
   font-size: 100px;
 }
@@ -49,9 +55,24 @@ p{
   font-size: 25px; 
 }
 
-#console{
+#know{
+  font-family: 'Montserrat';
+  font-size: 30px;
+  background: rgba(0,0,0,0);
+  border:1px solid #000000;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#udeaT{
   margin-top: 5px;
-  font-size: 40px;
-  font-family: 'VT323'
+  margin-bottom: 5px;
+}
+
+#uni{
+  font-family: 'Disaster';
+  font-size: 45px;
+  color: #4cb36a;
+  text-shadow: white 0.5px 0.5px;
 }
     /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
