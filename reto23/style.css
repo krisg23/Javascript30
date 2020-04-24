@@ -1,0 +1,126 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  font-size:15px;
+  background-color: #ff0266;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  background-image:
+  radial-gradient(circle at 100% 150%, #c6004e 24%, #ff0266 25%, #ff0266 28%, #c6004e 29%, #c6004e 36%, #ff0266 36%, #ff0266 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, #c6004e 24%, #ff0266 25%, #ff0266 28%, #c6004e 29%, #c6004e 36%, #ff0266 36%, #ff0266 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, #ff0266 10%, #c6004e 11%, #c6004e 23%, #ff0266 24%, #ff0266 30%, #c6004e 31%, #c6004e 43%, #ff0266 44%, #ff0266 50%, #c6004e 51%, #c6004e 63%, #ff0266 64%, #ff0266 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, #ff0266 5%, #c6004e 6%, #c6004e 15%, #ff0266 16%, #ff0266 20%, #c6004e 21%, #c6004e 30%, #ff0266 31%, #ff0266 35%, #c6004e 36%, #c6004e 45%, #ff0266 46%, #ff0266 49%, transparent 50%, transparent),
+  radial-gradient(circle at 0    50%, #ff0266 5%, #c6004e 6%, #c6004e 15%, #ff0266 16%, #ff0266 20%, #c6004e 21%, #c6004e 30%, #ff0266 31%, #ff0266 35%, #c6004e 36%, #c6004e 45%, #ff0266 46%, #ff0266 49%, transparent 50%, transparent);
+  background-size:100px 50px;
+}
+
+.voiceinator {
+  padding: 2rem;
+  width: 50rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #ff0266;
+  width: calc(100% + 4rem);
+  margin: -2rem 0 2rem -2rem;
+  padding: .5rem;
+  background: #121212;
+  border-bottom: 5px solid #c6004e;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 100;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 3px 3px 0 #212121;
+}
+
+.voiceinator input,
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border: 0;
+  font-size: 2rem;
+  background: #ffb3d1;
+  outline: 0;
+}
+
+textarea {
+  height: 20rem;
+}
+
+input[type="select"] {
+
+}
+
+.voiceinator button {
+  color: #ff0266;
+  background: #121212;
+  border: 0;
+  width: 49%;
+  float: left;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 0;
+  font-size: 2rem;
+  border-bottom: 5px solid #c6004e;
+  cursor: pointer;
+  position: relative;
+}
+
+.voiceinator button:active {
+  top: 2px;
+}
+
+.voiceinator button:nth-of-type(1) {
+  margin-right: 2%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: red;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #ff0266;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff0266;
+  cursor: pointer;
+}
