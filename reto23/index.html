@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="sources/style.css">
 </head>
 <body>
-  <!--<audio id="french" src="sounds/frances.mp3" type="audio/mp3"></audio>
+  <audio id="french" src="sounds/frances.mp3" type="audio/mp3"></audio>
   <audio id="italian" src="sounds/italiano.mp3" type="audio/mp3"></audio>
-  <audio id="deutsch" src="sounds/aleman.mp3" type="audio/mp3"></audio>-->
+  <audio id="deutsch" src="sounds/aleman.mp3" type="audio/mp3"></audio>
+  <audio id="japan" src="sounds/japones.mp3" type="audio/mp3"></audio>
     <div class="voiceinator">
 
       <h1>The Voiceinator 5000</h1>
@@ -33,6 +34,7 @@
     </div>
 
 <script>
+  alert("Prueba especialmente el Francés, el Italiano, el Alemán y el Japonés");
   const msg = new SpeechSynthesisUtterance();
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');
@@ -40,12 +42,14 @@
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
   msg.text = document.querySelector('[name="text"]').value;
-  /*const audioFr = document.querySelector('#french');
+  const audioFr = document.querySelector('#french');
   const audioIt = document.querySelector('#italian');
   const audioAl = document.querySelector('#deutsch');
+  const audioJP = document.querySelector('#japan');
   var french = false;
   var italian = false;
-  var deutsch = false;*/
+  var deutsch = false;
+  var japan = false;
 
   function populateVoices() {
     voices = this.getVoices();
@@ -57,9 +61,10 @@
   function setVoice() {
     msg.voice = voices.find(voice => voice.name === this.value);
     //toggle();
-    /*if(this.value == 'Google français'){french=true;}else{french=false;}
+    if(this.value == 'Google français'){french=true;}else{french=false;}
     if(this.value == 'Google italiano'){italian=true;}else{italian=false;}
-    if(this.value == 'Google Deutsch'){deutsch=true;}else{deutsch=false;}*/
+    if(this.value == 'Google Deutsch'){deutsch=true;}else{deutsch=false;}
+    if(this.value == 'Google 日本語'){japan=true;}else{japan=false;}
   }
 
   function toggle(startOver = true) {
@@ -67,7 +72,6 @@
     if (startOver) {
       speechSynthesis.speak(msg);
     }
-    //if(speechSynthesis.paused){playAudio();}
   }
 
   function setOption() {
@@ -76,17 +80,14 @@
     toggle();
   }
 
-  /*function playAudio(){
+  function playAudio(){
     if(french){audioFr.play();}
     if(italian){audioIt.play();}
     if(deutsch){audioAl.play();}
-  }*/
-
-  /*La idea era reproducir sonidos en Alemán. Francés e Italiano después de que se reproduje el audio del 'SpeechSynthesis'
-    lastimosamente no se logró, se intentó de muchas formas pero no pudimos conseguir el objetivo, aqui lo dejo entonces
-    para retomarlo en un futuro si es posible. Madrugada del 24 de abril de 2020. Cambio y fuera.*/
-
+    if(japan){audioJP.play();}
+  }
   speechSynthesis.addEventListener('voiceschanged', populateVoices);
+  msg.addEventListener("end", () => playAudio());
   voicesDropdown.addEventListener('change', setVoice);
   options.forEach(option => option.addEventListener('change', setOption));
   speakButton.addEventListener('click', toggle);
