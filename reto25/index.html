@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Understanding JavaScript's Capture</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+</head>
+<body class="bod">
+  <audio id="song" src="theme.mp3" type="audio/mp3"></audio>
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after { 
+    box-sizing: inherit; 
+  }
+
+  div {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .one {
+    background-image: url(gifs/blackL.gif);
+    background-position: center;
+  }
+
+  .two {
+    background-color: black;
+  }
+
+  .three {
+    background-image: url(gifs/blackL.gif);
+    background-position: center;
+  }
+</style>
+
+<script>
+  alert("Click en cualquier parte de la pantalla para reproducir o pausar la música");
+  const divs = document.querySelectorAll('div');
+  const song = document.getElementById("song");
+  song.currentTime = 4;
+
+  function logText(e) {
+    playAudio();
+    console.log(this.classList.value);
+    e.stopPropagation(); // stop bubbling!
+    //console.log(this);
+  }
+
+  function playAudio(){
+    if(song.paused == false){song.pause();}
+    else{song.play();}
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false,
+    once: false
+  }));
+  
+</script>
+</body>
+</html>
