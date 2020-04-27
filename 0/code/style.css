@@ -4,17 +4,32 @@ body, html {
   width: 100%;
   height: 100%;
   font-family: 'Josefin Sans', sans-serif;
-  background-color: #B8F0FF;
+  background-color: #121212;
   overflow: hidden;
   position: relative;
   outline: none;
   perspective: 1000px;
 }
 
+h1{
+  color: white;
+  margin-top: 45px;
+}
+
+center #title{
+  color: #03c03c;
+  font-size: 35px;
+}
+
+center #title2{
+  margin-top: 10px;
+  font-size: 25px;
+}
 .main {
+  margin-top: 40px;
   position: absolute;
-  width: 730px;
-  height: 420px;
+  width: 900px;
+  height: 450px;
   top: 50%;
   left: 50%;
   box-sizing: border-box;
@@ -42,7 +57,8 @@ body, html {
   align-items: center;
 }
 .main .header {
-  padding: 15px 0 20px;
+  font-size: 25px;
+  padding: 0px 0 20px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -57,7 +73,7 @@ body, html {
   font-weight: 700;
 }
 .main .right-wrapper {
-  background-color: #f05855;
+  background-color: #9b03c0;
   color: white;
   transform-origin: left center;
   transform: rotateY(110deg);
@@ -80,7 +96,7 @@ body, html {
 }
 
 .main .right-wrapper .thumb{
-  width: 325px;
+  width: 370px;
   height: 100%;
 }
 
@@ -97,7 +113,7 @@ body, html {
 }
 .main .sideb .showDate i {
   cursor: pointer;
-  background: #f05855;
+  background: #9b03c0;
   border-radius: 4px;
   padding: 8px 12px;
   transform: scale(1);
@@ -121,7 +137,7 @@ body, html {
   color: transparent;
 }
 .main .sideb table th {
-  color: #f05855;
+  color: #03c03c;
   font-size: 0.75em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -142,7 +158,7 @@ body, html {
   left: 50%;
   top: 100%;
   transform: translate(-50%, -8px);
-  background-color: #f05855;
+  background-color: #9b03c0;
 }
 .main .sideb table td.currentDay::before {
   display: block;
@@ -152,7 +168,7 @@ body, html {
   cursor: pointer;
 }
 .main .sideb table td.selectable:hover {
-  background: #f05855;
+  background: #9b03c0;
   color: white;
 }
 .main .sideb table td.between {
@@ -160,6 +176,25 @@ body, html {
   color: white;
 }
 .main .sideb table td.active, .main .sideb table td.hover {
-  background: #f05855;
+  background: #9b03c0;
   color: white;
+}
+
+.calender{
+  height: 100%;
+  font-size: 30px;
+}
+
+.weedays{
+  font-size: 20px;
+}
+
+.showDate{
+  margin-bottom: 0;
+}
+
+.showDate .fa{
+  top: 50%;
+  bottom: 0;
+  right: 0;
 }
