@@ -84,7 +84,7 @@ nav ul {
   position: absolute;
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+  box-shadow: 10px 10px 50px 10px rgba(236, 236, 236, 0.555), 0 15px 35px rgba(55, 149, 192, 0.651), 0 5px 15px rgba(187, 38, 38, 0.1);
   transition: all 0.3s, opacity 0.1s, transform 0.2s;
   transform-origin: 50% 0;
   display: flex;
