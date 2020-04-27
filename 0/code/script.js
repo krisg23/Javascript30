@@ -156,6 +156,7 @@ function dateClickHandler(elem) {
 			$(".right-wrapper .header span").html(names[number-1]);
 			$(".right-wrapper .thumb a").attr("href", routes[number-1]);
 			$(".right-wrapper .thumb").css("background-image", "url("+thumbs[number-1]+")");
+			$(".right-wrapper").toggleClass("is-active");
 		}, 500);
 	}
 }
