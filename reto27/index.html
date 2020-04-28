@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS30 | Click and Drag</title>
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+    <h2>Click y arrastra hacia la izquierda</h2>
+    <h4>Pikachu Origami - Tutorial</h4>
+  </center>
+  <div class="items">
+    <div class="item item01"></div>
+    <div class="item item02"></div>
+    <div class="item item03"></div>
+    <div class="item item04"></div>
+    <div class="item item05"></div>
+    <div class="item item06"></div>
+    <div class="item item07"></div>
+    <div class="item item08"></div>
+    <div class="item item09"></div>
+    <div class="item item10"></div>
+    <div class="item item11"></div>
+    <div class="item item12"></div>
+    <div class="item item13"></div>
+    <div class="item item14"></div>
+    <div class="item item15"></div>
+    <div class="item item16"></div>
+    <div class="item item17"></div>
+    <div class="item item18"></div>
+    <div class="item item19"></div>
+    <div class="item item20"></div>
+    <div class="item item21"></div>
+    <div class="item item22"></div>
+    <div class="item item23"></div>
+    <div class="item item24"></div>
+    <div class="item item25"></div>
+    <div class="item item26"></div>
+    <div class="item item27"></div>
+    <div class="item item28"></div>
+    <div class="item item29"></div>
+    <div class="item item30"></div>
+    <div class="item item31"></div>
+    <div class="item item32"></div>
+    <div class="item item33"></div>
+    <div class="item item34"></div>
+    <div class="item item35"></div>
+    <div class="item item36"></div>
+    <div class="item item37"></div>
+    <div class="item item38"></div>
+    <div class="item item39"></div>
+    <div class="item item40"></div>
+    <div class="item item41"></div>
+  </div>
+
+<script>
+  const slider = document.querySelector('.items');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;  // stop the fn from running
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+</script>
+
+  </body>
+</html>
