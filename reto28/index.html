@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Speed Scrubber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="sources/video.mp4" loop controls></video>
+    <p>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+  <footer>
+    <p>Canción "<em>Hombres de Acción</em>" de la película <em>Mulan (1998)</em></p>
+  </footer>
+
+<script>
+  const speed = document.querySelector('.speed');
+  const bar = speed.querySelector('.speed-bar');
+  const video = document.querySelector('.flex');
+
+  function handleMove(e) {
+      const y = e.pageY - this.offsetTop;
+      const percent = y / this.offsetHeight;
+      const min = 0.5;
+      const max = 5;
+      const height = Math.round(percent * 100) + '%';
+      const playbackRate = percent * (max - min) + min;
+      bar.style.height = height;
+      bar.textContent = playbackRate.toFixed(2) + '×';
+      video.playbackRate = playbackRate;
+    }
+
+  speed.addEventListener('mousemove', handleMove);
+
+</script>
+</body>
+</html>
