@@ -108,6 +108,10 @@
       word-spacing: 0.15em;
     }
 
+    img:hover{
+      cursor: pointer;
+    }
+
     .site-wrap {
       max-width: 950px;
       margin: 100px auto;
