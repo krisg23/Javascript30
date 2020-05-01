@@ -57,7 +57,7 @@ Date.prototype.isSameDateAs = function (pDate) {
 };
 
 function getMonth(currentDay) {
-	var now = new Date();
+	var now = new Date(2020,3,1);
 	var currentMonth = month[currentDay.getMonth()];
 	var monthArr = [];
 	for (i = 1 - currentDay.getDate(); i < 31; i++) {
@@ -134,7 +134,7 @@ function initCalender(monthData) {
 		dateClickHandler($(this));
 	});
 }
-initCalender(getMonth(new Date()));
+initCalender(getMonth(new Date(2020,3,1)));
 
 var clickCounter = 0;
 var number = 0;
