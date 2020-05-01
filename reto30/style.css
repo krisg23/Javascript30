@@ -1,0 +1,87 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #ebebeb;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 10rem;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+button{
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+button:hover{
+  cursor: pointer;
+  color: #fff;
+  background-color: #858585;
+}
+
+.score {
+  background: rgba(255,255,255,0.2);
+  font-size: 8rem;
+  padding: 0 3rem;
+  line-height: 1;
+  border-radius: 1rem;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
+  height: 280px;
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url('images/bienestar.png') bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height:70px;
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.mole {
+  background: url('images/kid.png') bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 75%;
+  transition:all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
